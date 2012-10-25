@@ -1,0 +1,15 @@
+{% assets 'templates' -%}
+  <script src="{{ ASSET_URL }}"></script>
+{%- endassets %}
+
+Existing templates:
+<ol id="t"></ol>
+
+<script>
+  var list = document.getElementById('t'), li, t;
+  for (t in Handlebars.templates) if (Handlebars.templates.hasOwnProperty(t)) {
+    li = document.createElement('li');
+    li.appendChild(document.createTextNode(t));
+    list.appendChild(li);
+  }
+</script>
